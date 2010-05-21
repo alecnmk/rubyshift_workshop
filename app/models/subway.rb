@@ -1,5 +1,5 @@
 class Subway < ActiveRecord::Base
   has_many  :branches
   has_many  :trains
-  has_maby  :people
+  has_many  :people
 end
