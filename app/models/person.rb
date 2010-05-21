@@ -1,6 +1,6 @@
 class Person < ActiveRecord::Base
   include AASM
-  aasm_column :status
+  aasm_column :state
   aasm_initial_state :pending
   
   aasm_state :pending
