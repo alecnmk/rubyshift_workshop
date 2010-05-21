@@ -1,6 +1,6 @@
 class CreatePeople < ActiveRecord::Migration
   def self.up
-    create_table :people do |t|
+    create_table :people, :force => true do |t|
       t.integer :origin_station_id
       t.integer :destination_station_id
       t.datetime  :arrived_at
