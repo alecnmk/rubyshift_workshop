@@ -7,6 +7,8 @@ class CreatePeople < ActiveRecord::Migration
       t.datetime  :departed_at
       t.datetime  :delivered_at
       t.string    :state
+      t.string    :object_type
+      t.integer   :object_id
       t.timestamps
     end
   end
