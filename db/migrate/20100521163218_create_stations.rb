@@ -1,7 +1,13 @@
 class CreateStations < ActiveRecord::Migration
   def self.up
     create_table :stations do |t|
-
+      t.float :latitude
+      t.float :longitude
+      t.string :name
+      t.string :color
+      t_integer :branch_id
+      t.integer :delta_in, :default => 0
+      t.integer :delta_out, :default => 0
       t.timestamps
     end
   end
