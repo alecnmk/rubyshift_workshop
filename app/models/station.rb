@@ -5,6 +5,11 @@ class Station < ActiveRecord::Base
   belongs_to :subway
 
   def update_state
+    enter_to_station
+    exit_from_station
+  end
+
+  def enter_to_station
     new_people = self.subway.people_arriving_on_station
     self.update_attribute(:delta_in, self.delta_in + new_people)
     new_people.times do
