@@ -1,8 +1,9 @@
 class Train < ActiveRecord::Base
   include AASM
   aasm_column :status
-  aasm_initial_state :forward
+  aasm_initial_state :at_depot
   
+  aasm_state :at_depot
   aasm_state :forward
   aasm_state :backward
 
