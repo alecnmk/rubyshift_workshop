@@ -16,11 +16,15 @@ class Train < ActiveRecord::Base
 
   def update_state
     # move to next hop (1min * 50km/h)
-    # check if near (<100m) station
+    # if near_station?()
     #   unload people
     #   load people
+    # end
   end
 
-  def near_station(station)
+  def near_station?(station)
+    tr = Geokit::LatLng.new(self.latitude, self.longitude)
+    st = Geokit::LatLng.new(station.latitude, station.longitude)
+    tr.distance_to(st) < 0.1
   end
 end
