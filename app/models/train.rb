@@ -20,4 +20,7 @@ class Train < ActiveRecord::Base
     #   unload people
     #   load people
   end
+
+  def near_station(station)
+  end
 end
