@@ -4,8 +4,9 @@
   <head>
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application' %>
+    <%= yield(:js) %>
   </head>
-  <body>
+  <body onload="<%= yield(:onload) %>">
     <div id="container">
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
